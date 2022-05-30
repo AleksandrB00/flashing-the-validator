@@ -2,8 +2,8 @@ import xml.etree.ElementTree as ET
 import os
 from openpyxl import load_workbook
 def convert():
- os.chdir( r"C:\Users\a.babaev\Desktop\Программирование")
- wb=load_workbook(filename='Штрих-Карт_497_20220131.xlsx', read_only=True)
+ os.chdir( r"file_path")
+ wb=load_workbook(filename='file_name.xlsx', read_only=True)
  ws = wb['Лист1']
  a=input("Номер валидатора:")
  for row_cells in ws:
@@ -21,7 +21,7 @@ def convert():
       telephone = ws.cell(string_row,cell.column+13)
       login = ws.cell(string_row,cell.column+14)
       password = ws.cell(string_row,cell.column+15)
-      os.chdir( r"C:\Users\a.babaev\Desktop\Программирование\Sert_conf_keys_KO" )
+      os.chdir( r"File_path" )
       tree = ET.parse('Settings' + str(cell.value) + '.xml')
       root = tree.getroot()
       element = root[0]
